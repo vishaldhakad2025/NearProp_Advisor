@@ -1,0 +1,88 @@
+.dev-profile-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+  border-radius: 10px;
+}
+
+.dev-header {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.dev-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 10%;
+  object-fit: cover;
+  background: #eee;
+}
+
+.verified-badge {
+  background: #4caf50;
+  color: white;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.edit-btn {
+  padding: 8px 14px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.dev-features {
+  margin-top: 30px;
+}
+
+.dev-features ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dev-features li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dev-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dev-actions button {
+  flex: 1 1 200px;
+  padding: 10px 20px;
+  background: #212121;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dev-actions button:hover {
+  background: #424242;
+}
+
+@media (max-width: 600px) {
+  .dev-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dev-actions {
+    flex-direction: column;
+  }
+}

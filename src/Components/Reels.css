@@ -1,0 +1,148 @@
+/* General layout */
+.reels-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.upload-section h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-section input[type="text"],
+.upload-section input[type="file"] {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.upload-section button {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.upload-section button:hover {
+  background-color: #0056b3;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Reel Feed */
+.reel-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-right: 5px;
+}
+
+/* Reel Card */
+.reel-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+}
+
+.reel-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.reel-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.reel-card .property-id {
+  font-size: 14px;
+  color: #666;
+}
+
+.reel-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.reel-actions button {
+  padding: 8px 12px;
+  background-color: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reel-actions button:hover {
+  background-color: #ddd;
+}
+
+.comment-box {
+  display: flex;
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.comment-box input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.comment-box button {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.comment-box button:hover {
+  background-color: #ddd;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .reel-card {
+    padding: 12px;
+  }
+
+  .upload-section input,
+  .comment-box input {
+    font-size: 13px;
+  }
+
+  .upload-section button,
+  .comment-box button {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,706 @@
+/* Add Property Page Background */
+.add-property-page {
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2');
+  /* Replace with your image URL or local path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Optional: keeps background fixed during scroll */
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  /* Ensure padding for smaller screens */
+}
+
+/* Animations */
+@keyframes property-management-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    background-color: #fff3cd;
+  }
+
+  50% {
+    background-color: #ffe79a;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container */
+.property-management-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  animation: property-management-fadeIn 0.6s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.property-management-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  /* Semi-transparent overlay for readability */
+  /* Increase to rgba(255, 255, 255, 0.95) if text is hard to read */
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.add-property-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.property-container {
+  animation: slideUp 0.6s ease-out;
+}
+
+/* Form Styling */
+.form-step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: 8px;
+  background: transparent;
+  /* No background on form-step */
+}
+
+.form-step h2 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #dfe6e9;
+  padding-bottom: 8px;
+}
+
+.property-management-form-group {
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+
+.property-management-form-group:hover {
+  transform: scale(1.01);
+}
+
+.property-management-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+  font-size: 13px;
+}
+
+.property-management-form-group input,
+.property-management-form-group select,
+.property-management-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #f9f9f9;
+  transition: all 0.3s;
+  height: 38px;
+  /* Consistent height for inputs and selects */
+}
+
+/* --- Media Upload Section --- */
+
+/* Existing media container */
+.existing-media {
+  margin-top: 15px;
+}
+
+.existing-media h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+/* Media grid */
+.media-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+/* Media item box */
+.media-item {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 5px;
+  background: #fafafa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.media-item video {
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.media-item {
+  position: relative;
+  display: inline-block;
+  
+}
+.media-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Image preview */
+.media-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Remove button */
+.remove-option {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  line-height: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.remove-option:hover {
+  background: #d93636;
+}
+
+.property-management-form-group textarea {
+  height: 100px;
+  /* Fixed height for textareas */
+  resize: vertical;
+}
+
+.property-management-form-group input:focus,
+.property-management-form-group select:focus,
+.property-management-form-group textarea:focus {
+  outline: none;
+  border-color: darkcyan;
+  box-shadow: darkcyan;
+  background: #fff;
+}
+
+.gdpr-section{
+    box-shadow: darkcyan;
+  background: #fff;
+  font-weight: 900;
+  
+  padding: 0px 20px;
+}
+.gdpr-inp{
+  height: 30px;
+}
+/* Counter Controls */
+.counter-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.counter-control input {
+  width: 50px;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  height: 38px;
+  /* Match input height */
+}
+
+.counter-control button {
+  width: 30px;
+  height: 30px;
+  background: #e7e7e7;
+  border: none;
+  font-size: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.counter-control button:hover {
+  background: darkcyan;
+  color: #fff;
+}
+
+/* Dropdown and Selected Options */
+.dropdown-section {
+  margin: 12px 0;
+  flex: 1;
+  /* For 3-per-row layout */
+}
+
+.dropdown-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.dropdown-section button {
+  width: 100%;
+  background-color: #e0f2fe;
+  border: 1px solid #90cdf4;
+  color: darkcyan;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 38px;
+  /* Match input height */
+}
+
+.dropdown-section button:hover {
+  background-color: #d0eaff;
+}
+
+.selected-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.option-chip {
+  display: flex;
+  align-items: center;
+  background-color: #e6f2ff;
+  border: 1px solid #90cdf4;
+  border-radius: 15px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: darkcyan;
+}
+
+.remove-option {
+  background: none;
+  border: none;
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-left: 6px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.remove-option:hover {
+  color: #d9363e;
+}
+
+/* Features List */
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.features-list label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* width: calc(33.33% - 10px); */
+  background-color: #f5faff;
+  border: 1px solid #cce5ff;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: darkcyan;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-list label:hover {
+  background-color: #e6f2ff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.features-list input[type="checkbox"] {
+  accent-color: darkcyan;
+  transform: scale(1.1);
+}
+
+/* Detail Row for Side-by-Side Fields */
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.detail-row .property-management-form-group,
+.detail-row .dropdown-section {
+  flex: 1;
+  min-width: 150px;
+}
+
+.detail-row .type-select {
+  flex: 1;
+  width: 100% !important;
+  padding: 5px 8px;
+}
+.animated-step-type{
+  color: darkcyan;
+  font-weight: bold;
+  border-bottom: 2px     darkcyan;
+  text-transform: capitalize !important;
+}
+/* Form Navigation */
+.form-navigation {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-navigation button {
+  background-color: darkcyan;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  height: 38px;
+  /* Match input height */
+}
+
+.form-navigation button:hover {
+  background-color: darkcyan;
+}
+
+.submit-btn {
+  background: darkcyan;
+  width: 100%;
+  font-size: 14px;
+}
+
+.submit-btn:hover {
+  background: darkcyan;
+  box-shadow: 0 8px 20px rgba(0, 128, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Add New Button */
+.add-more-btn {
+  background-color: #e0f2fe;
+  border: 1px solid #90cdf4;
+  color: darkcyan;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 38px;
+  /* Match input height */
+}
+
+.add-more-btn:hover {
+  background-color: #d0eaff;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 350px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 6px 0;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  height: 38px;
+  /* Match input height */
+}
+
+.modal-actions button:first-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-actions button:last-child {
+  background-color: darkcyan;
+  color: #fff;
+}
+
+.modal-actions button:hover {
+  opacity: 0.9;
+}
+
+/* Stepper */
+.stepper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  padding: 0 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 6px;
+}
+
+.stepper-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  text-align: center;
+  min-width: 50px;
+}
+
+.stepper-item::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -50%;
+  width: 100%;
+  height: 2px;
+  background-color: #ddd;
+  z-index: 0;
+}
+
+.stepper-item:first-child::before {
+  display: none;
+}
+
+.step-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ccc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+.step-label {
+  font-size: 11px;
+  margin-top: 4px;
+  color: #666;
+}
+
+.stepper-item.active .step-circle {
+  background-color: darkcyan;
+}
+
+.stepper-item.active .step-label {
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.stepper-item.completed .step-circle {
+  background-color: darkcyan;
+}
+
+.stepper-item.completed .step-label {
+  color: darkcyan;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .property-management-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .detail-row {
+    flex-direction: column;
+  }
+
+  .dropdown-section {
+    min-width: 100%;
+  }
+
+  .property-management-form-group input,
+  .property-management-form-group select,
+  .property-management-form-group textarea {
+    width: 100%;
+  }
+
+  .features-list label {
+    width: 100%;
+  }
+
+  .stepper-header {
+    gap: 4px;
+  }
+
+  .stepper-item {
+    min-width: 40px;
+  }
+
+  .step-circle {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+}
+
+
+.required-field {
+  color: rgba(255, 0, 0, 0.61);
+  margin-left: 3px;
+}
+
+
+
+
+/* Add to existing Project.css */
+
+/* Ensure number inputs don't show spin buttons */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Highlight required fields on error */
+.error-filed {
+  border: 1px solid red !important;
+  background-color: #fff6f6;
+}
+
+.error-message-filed {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Disabled button styling */
+.form-navigation button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

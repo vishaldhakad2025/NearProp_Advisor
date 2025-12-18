@@ -1,0 +1,189 @@
+/* Container form */
+.property-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 35px;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #f9fafb; /* Soft off-white background */
+  border-radius: 8px;
+  box-shadow: 0 10px 35px rgba(0, 20, 50, 0.12); /* subtle deep shadow */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937; /* Dark slate */
+}
+
+/* Grid rows with 3 columns */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* Responsive: single column for smaller screens */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form group wrapper */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Labels */
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #264e4e; /* Darkcyan-ish dark */
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Inputs, selects, textarea */
+.property-form__input,
+.property-form__textarea,
+.property-form__select {
+  padding: 14px 16px;
+  border: 1.6px solid #a7cfcf; /* lighter cyan border */
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: #ffffff;
+  color: #0f3a3a; /* very dark cyan */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-shadow: inset 0 1px 3px rgb(0 0 0 / 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.property-form__input:focus,
+.property-form__textarea:focus,
+.property-form__select:focus {
+  border-color: #008b8b; /* darkcyan */
+  box-shadow: 0 0 6px rgba(0, 139, 139, 0.5);
+  outline: none;
+}
+
+/* Textarea */
+.property-form__textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Select */
+.property-form__select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23264e4e" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 20px 20px;
+  padding-right: 40px;
+}
+
+/* Price prefix */
+.property-form__input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.property-form__prefix {
+  position: absolute;
+  left: 16px;
+  font-size: 18px;
+  color: #008b8b; /* darkcyan */
+  pointer-events: none;
+}
+
+/* Adjust input padding so text doesn't overlap prefix */
+.property-form__input-group .property-form__input {
+  padding-left: 40px;
+}
+
+/* Bedrooms input group */
+.bedrooms-group {
+  display: flex;
+  align-items: center;
+}
+
+.bedrooms-btn {
+  padding: 9px 15px;
+  background-color: #008b8b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 21px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 139, 139, 0.3);
+}
+
+.bedrooms-btn:hover {
+  background-color: #005f5f; /* darker darkcyan */
+  box-shadow: 0 3px 12px rgba(0, 95, 95, 0.5);
+}
+
+.bedrooms-input {
+  width: 60px;
+  margin: 0 12px;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 8px;
+  border-radius: 6px;
+  border: 1.6px solid #a7cfcf;
+  transition: border-color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bedrooms-input:focus {
+  border-color: #008b8b;
+  outline: none;
+}
+
+/* Submit button */
+/* Smaller, sleek submit button */
+.property-form__submit {
+  padding: 10px 24px;
+  background-color: #008b8b;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  max-width: 180px;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(0, 139, 139, 0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.property-form__submit:hover {
+  background-color: #005f5f;
+  box-shadow: 0 6px 18px rgba(0, 95, 95, 0.7);
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .property-form__input,
+  .property-form__textarea,
+  .property-form__select {
+    font-size: 14px;
+  }
+
+  .property-form__submit {
+    font-size: 16px;
+  }
+}

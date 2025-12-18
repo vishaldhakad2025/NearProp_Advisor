@@ -1,0 +1,247 @@
+/* login.css */
+
+
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+  padding: 20px;
+}
+
+.login-box {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+.login-img-wrap {
+  flex: 1;
+  display: none;
+}
+
+.login-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-form {
+  flex: 1;
+  padding: 40px 30px;
+}
+
+@media (min-width: 768px) {
+  .login-img-wrap {
+    display: block;
+  }
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2563eb;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-subtext {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.login-input-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.login-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 42%;
+  transform: translateY(-50%);
+  color: #2563eb;
+}
+
+.login-input-field {
+  width: 100%;
+  padding: 10px 10px 10px 36px !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  font-size: 14px;
+  outline: none !important;
+  transition: border-color 0.2s !important;
+}
+
+.login-input-field:focus {
+  border-color: #2563eb;
+}
+
+.login-btn-primary {
+  width: 100%;
+  background-color: #2563eb;
+  color: #fff;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.login-help-text {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.login-help-text a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.login-error-text {
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* otp.css */
+
+
+.otp-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+  padding: 20px;
+}
+
+.otp-box {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.otp-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #16a34a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.otp-subtext {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.otp-input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.otp-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #16a34a;
+}
+
+.otp-input-field {
+  width: 100%;
+  padding: 10px 10px 10px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.otp-input-field:focus {
+  border-color: #16a34a;
+}
+
+.otp-btn-primary {
+  width: 100%;
+  background-color: #16a34a;
+  color: #fff;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.otp-btn-primary:hover {
+  background-color: #15803d;
+}
+
+.otp-error-text {
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.otp-resend-text {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.otp-resend-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+  padding: 0;
+}
+
+
+
+/* not found page css  */
+.not-found-container {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.not-found-container h1 {
+  font-size: 3rem;
+  color: #0f172a;
+}
+
+.go-home-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: darkcyan;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}

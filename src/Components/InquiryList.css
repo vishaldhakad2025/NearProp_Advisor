@@ -1,0 +1,140 @@
+.inquiry-list-container {
+  padding: 24px;
+  background: #f0f2f5;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.inquiry-list-container h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #2c3e50;
+  border-bottom: 2px solid darkcyan;
+  padding-bottom: 8px;
+}
+
+.inquiry-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inquiry-table th,
+.inquiry-table td {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #ececec;
+  transition: background-color 0.3s ease;
+}
+
+.inquiry-table th {
+  background-color: darkcyan;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inquiry-table td {
+  color: #34495e;
+}
+
+.inquiry-table tr:hover {
+  background-color: #f0faff;
+}
+
+.inquiry-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Add color tags (optional use for status or importance) */
+.inquiry-table td.status-available {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.inquiry-table td.status-pending {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.inquiry-table td.status-closed {
+  color: #c0392b;
+  font-weight: bold;
+}
+
+/* Badge-style dates */
+.inquiry-table td.date-badge {
+  background-color: #dff0ff;
+  color: darkcyan;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 13px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .inquiry-list-container h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .inquiry-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    background: none;
+    box-shadow: none;
+  }
+
+  .inquiry-table thead {
+    display: none;
+  }
+
+  .inquiry-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .inquiry-table tr {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 16px;
+  }
+
+  .inquiry-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    text-align: left;
+    font-size: 14px;
+    border: none;
+    position: relative;
+  }
+
+  .inquiry-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #555;
+    flex: 1;
+    margin-right: 12px;
+  }
+
+  .inquiry-table td.date-badge {
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+}

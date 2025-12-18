@@ -1,0 +1,118 @@
+.coupon-container {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.coupon-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.coupon-form input {
+  flex: 1;
+  padding: 8px;
+}
+
+.coupon-message.success {
+  color: green;
+}
+
+.coupon-message.error {
+  color: red;
+}
+
+.bill-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bill-summary li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.bill-summary .total {
+  font-weight: bold;
+}
+
+.available-coupons {
+  margin-top: 1rem;
+}
+
+.coupon-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.coupon-tag {
+  padding: 6px 12px;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.coupon-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.coupon-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+}
+
+.coupon-form button {
+  padding: 0.5rem 1rem;
+  background-color: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.coupon-message.success {
+  color: green;
+}
+
+.coupon-message.error {
+  color: red;
+}
+
+.bill-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.bill-summary li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.bill-summary .total {
+  font-weight: bold;
+  border-top: 1px solid #cbd5e0;
+  padding-top: 0.5rem;
+}
+.pay-button {
+  background-color: #4b2c92;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 16px;
+}

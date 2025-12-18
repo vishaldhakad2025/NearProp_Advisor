@@ -1,0 +1,25 @@
+/* In Footer.css */
+.footer {
+  background-color: #0f172a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  /* No fixed position here, footer flows naturally */
+}
+
+/* In your main CSS (e.g., App.css or index.css) */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  min-height: 100vh;       /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;                 /* takes all available vertical space */
+}

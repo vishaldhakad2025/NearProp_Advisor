@@ -1,0 +1,45 @@
+.subscription-dialog .MuiPaper-root {
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.subscription-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: #888;
+}
+
+.subscription-content {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.subscription-message {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.subscription-actions {
+  margin-top: 10px;
+}
+
+.subscription-btn {
+  background: linear-gradient(90deg, #1976d2, #2196f3);
+  font-weight: 600;
+  text-transform: none;
+  border-radius: 10px;
+  padding: 10px;
+}

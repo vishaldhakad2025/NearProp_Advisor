@@ -1,0 +1,369 @@
+
+/* Mobile-first base styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f6f8fa;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: darkcyan;
+  margin-bottom: 20px;
+}
+
+/* Location Header */
+header[style*="padding"] {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+header[style*="padding"] div {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+header[style*="padding"] button {
+  padding: 6px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  width: 100%;
+  max-width: 150px;
+}
+
+/* Landing Header */
+.landing-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 15px;
+}
+
+.quick-actions button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 200px;
+}
+
+.header-actions .website-btn {
+  background-color: #1976d2 !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 0.9rem !important;
+  padding: 8px 16px !important;
+  border-radius: 8px !important;
+  width: 100%;
+  max-width: 200px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-actions .website-btn:hover {
+  background-color: #1565c0 !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(21, 101, 192, 0.6);
+}
+
+/* Quick Navigation Tiles */
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.quick-link-card {
+  background: #fff;
+  border: 2px solid darkcyan;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: darkcyan;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.quick-link-card:hover {
+  background-color: darkcyan;
+  color: #fff;
+}
+
+/* Property Summary */
+.property-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.property-summary .card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.property-summary .card span {
+  font-weight: 700;
+  color: #FF7043;
+}
+
+/* Analytics Section */
+.analytics {
+  margin-top: 20px;
+}
+
+.analytics h3 {
+  font-size: 1.2rem;
+  color: darkcyan;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.charts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-container {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h4 {
+  font-size: 1rem;
+  color: darkcyan;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Subscription Card */
+.renewal-stats {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.renewal-stats h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.renewal-details p {
+  margin: 8px 0;
+  font-size: 0.85rem;
+}
+
+.status-badge.active {
+  background: #28a745;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.status-badge.grace {
+  background: #ffc107;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.status-badge.expired {
+  background: #dc3545;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.days-badge.safe {
+  background: #28a745;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.days-badge.warning {
+  background: #ffc107;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.days-badge.expired {
+  background: #dc3545;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* Loading and Error States */
+.loading, .error {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  padding: 20px;
+}
+
+/* Website Button Animation */
+@keyframes pulseBlink {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 0px rgba(0, 139, 139, 0.8);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 15px rgba(0, 139, 139, 1);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0px rgba(0, 139, 139, 0.8);
+  }
+}
+
+/* Desktop Styles (min-width: 768px) */
+@media (min-width: 768px) {
+  .dashboard-wrapper {
+    padding: 40px 20px;
+  }
+
+  .dashboard-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+
+  header[style*="padding"] {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+  }
+
+  header[style*="padding"] div {
+    font-size: 1rem;
+  }
+
+  header[style*="padding"] button {
+    width: auto;
+    max-width: none;
+  }
+
+  .landing-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .quick-actions button {
+    width: auto;
+    max-width: none;
+  }
+
+  .header-actions .website-btn {
+    width: auto;
+    max-width: none;
+    padding: 10px 22px !important;
+    height: 50px !important;
+    animation: pulseBlink 1.5s infinite;
+  }
+
+  .quick-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .quick-link-card {
+    padding: 15px 25px;
+    font-size: 1rem;
+  }
+
+  .property-summary {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .property-summary .card {
+    font-size: 1rem;
+  }
+
+  .analytics h3 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .charts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chart-container h4 {
+    font-size: 1.2rem;
+  }
+
+  .renewal-stats h4 {
+    font-size: 1.2rem;
+  }
+
+  .renewal-details p {
+    font-size: 1rem;
+  }
+
+  .status-badge, .days-badge {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Desktop (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .quick-links {
+    gap: 30px;
+  }
+
+  .property-summary {
+    gap: 20px;
+  }
+
+  .chart-container {
+    padding: 20px;
+  }
+}
