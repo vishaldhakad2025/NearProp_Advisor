@@ -13,6 +13,10 @@ import { getMyProperties } from "../redux/slices/propertySlice";
 import { fetchUserProfile } from "../redux/slices/authSlice";
 import { useNavigate } from "react-router-dom";
 const razorpayKey =
+  import.meta.env.VITE_RAZORPAY_KEY ||
+  import.meta.env.VITE_RAZORPAY_LIVE_KEY ||
+  import.meta.env.VITE_RAZORPAY_TEST_KEY ||
+  import.meta.env.RAZORPAY_KEY ||
   import.meta.env.RAZORPAY_LIVE_KEY ||
   import.meta.env.RAZORPAY_TEST_KEY;
 
@@ -115,8 +119,12 @@ const UploadReelFlow = ({ token, onUploadSuccess, onClose }) => {
       ).unwrap();
       const { gatewayOrderId, referenceId } = paymentRes;
 
+      if (!razorpayKey) {
+        throw new Error('Razorpay key is missing. Please set VITE_RAZORPAY_KEY in your .env file.');
+      }
+
       const options = {
-        key: "rzp_live_RPI3GizN9Sz64W",
+        key: razorpayKey,
         amount: finalAmount * 100,
         currency: "INR",
         name: "Reel Upload Payment",

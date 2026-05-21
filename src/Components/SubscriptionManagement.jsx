@@ -14,6 +14,7 @@ const SubscriptionManagement = () => {
   const dispatch = useDispatch();
   const { plans, loading } = useSelector((state) => state.subscriptionPlans);
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const [activeTab, setActiveTab] = useState("property");
   const [mySubscription, setMySubscription] = useState(null);
 
   // Fetch subscription plans + my subscription
@@ -162,10 +163,20 @@ const SubscriptionManagement = () => {
 
       <h3 className="section-title">Choose a Plan</h3>
 
+      <div className="tabs">
+        <button className={`tab ${activeTab === 'profile' ? 'active' : ''}`} onClick={() => setActiveTab('profile')}>Profile Plans</button>
+        <button className={`tab ${activeTab === 'property' ? 'active' : ''}`} onClick={() => setActiveTab('property')}>Property (Advisor) Plans</button>
+        <button className={`tab ${activeTab === 'all' ? 'active' : ''}`} onClick={() => setActiveTab('all')}>All Plans</button>
+      </div>
+
       <div className="plans-list">
         {[...plans]
           .sort((a, b) => a.price - b.price)
-          .slice(0,2)
+          .filter(plan => {
+            if (activeTab === 'profile') return plan.type_s === 'PROFILE';
+            if (activeTab === 'property') return plan.type === 'ADVISOR';
+            return true;
+          })
           .map((plan) => {
             const isCurrentPlan = mySubscription?.plan?.id === plan.id;
             return (
@@ -205,6 +216,13 @@ const SubscriptionManagement = () => {
               </div>
             );
           })}
+        {([...(plans || [])].filter(plan => {
+          if (activeTab === 'profile') return plan.type_s === 'PROFILE';
+          if (activeTab === 'property') return plan.type === 'ADVISOR';
+          return true;
+        }).length === 0) && (
+          <div className="no-plans">No plans available for this category.</div>
+        )}
       </div>
 
       {mySubscription && (isExpired || isInGrace) && (

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 const razorpayKey =
+  import.meta.env.VITE_RAZORPAY_KEY ||
+  import.meta.env.VITE_RAZORPAY_LIVE_KEY ||
+  import.meta.env.VITE_RAZORPAY_TEST_KEY ||
+  import.meta.env.RAZORPAY_KEY ||
   import.meta.env.RAZORPAY_LIVE_KEY ||
   import.meta.env.RAZORPAY_TEST_KEY;
 
@@ -110,8 +114,12 @@ const RazorpayButton = ({ planId, couponCode, onPaymentSuccess, onPaymentError, 
 
       // 🔹 Step 3: Razorpay checkout options
       // rzp_test_JT7p2CBMbVuKMN  tickview testing key
+      if (!razorpayKey) {
+        throw new Error('Razorpay key is missing. Please set VITE_RAZORPAY_KEY in your .env file.');
+      }
+
       const options = {
-        key: "rzp_live_RPI3GizN9Sz64W",               //'rzp_test_LoJiA2mTb0THiq',
+        key: razorpayKey,
         amount: Math.round(amount * 100),
         currency,
         name: 'NearProp',
